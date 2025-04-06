@@ -71,15 +71,27 @@ Fill out the following table, mapping decimal numbers `0` through `15` to their 
 |---------|------------------------|
 | 0       | 0000                   |
 | 1       | 0001                   |
-| ...     | ...                    |
-| 15      | ????                   |
+| 2       | 0010                   |
+| 3       | 0011                   |
+| 4       | 0100                   |
+| 5       | 0101                   |
+| 6       | 0110                   |
+| 7       | 0111                   |
+| 8       | 1000                   |
+| 9       | 1001                   |
+| 10      | 1010                   |
+| 11      | 1011                   |
+| 12      | 1100                   |
+| 13      | 1101                   |
+| 14      | 1110                   |
+| 15      | 1111                   |
 
 **How many binary digits (bits) are needed?**
 
 Explain how to calculate the number of bits required:
 <details>
 <summary>Your Answer</summary>
-Erase this text and write your answer here!
+Wir brauchen insgesamt 4 Bit um Zahlen von 0 bis 15 darzustellen, bei zwei zuständen pro Bit kommen wir bei 4 Bit auf 16 mögliche Zustände was für diesen Fall ausreichend ist
 </details>
 
 ---
@@ -107,13 +119,24 @@ Refer to the truth table of a 1-bit full adder:
 #### Your Task
 Create a truth table for a **2-bit adder** without carry-in. What are the possible inputs and outputs?
 
->   Your
->
->   table
->
->   goes
->
->   here!
+| A1 | B1 | A0 | B0 | Q<sub>1</sub> | Q<sub>0</sub> | C<sub>out</sub> |
+|---|---|---|---|---|---|---------|
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 0 | 1 | 0 | 1 | 0 |
+| 0 | 0 | 1 | 0 | 0 | 1 | 0 |
+| 0 | 0 | 1 | 1 | 1 | 0 | 0 |
+| 0 | 1 | 0 | 0 | 0 | 1 | 0 |
+| 0 | 1 | 0 | 1 | 1 | 0 | 0 |
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 |
+| 0 | 1 | 1 | 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 0 | 1 | 0 |
+| 1 | 0 | 0 | 1 | 1 | 0 | 0 |
+| 1 | 0 | 1 | 0 | 1 | 0 | 0 |
+| 1 | 0 | 1 | 1 | 1 | 1 | 0 |
+| 1 | 1 | 0 | 0 | 1 | 0 | 0 |
+| 1 | 1 | 0 | 1 | 1 | 1 | 0 |
+| 1 | 1 | 1 | 0 | 1 | 1 | 0 |
+| 1 | 1 | 1 | 1 | 0 | 0 | 1 |
 
 ---
 
@@ -127,12 +150,15 @@ Use the [K-Map method](https://github.com/STEMgraph/4b957490-badf-4264-b9f2-1b5a
 
 <details>
 <summary>The final functions</summary>
+   
+* = AND
++ = OR
+   
+Q<sub>0</sub> =  not B0 * ((A0 * (not B1 + A1)) + (A1 * not B1)) + (B0 * not A1) * ((not A0 * not B1) * (A0 + B1)) + (not A0 * B1) * ((B0 * A1) + (not B0 * not A1))
 
-Q<sub>0</sub> = .......
+Q<sub>1</sub> =  A0 * ((not B0 * A1) + (not A1 * B1)) + B0 * ((A0 * not B1) * (not A0 * A1)) + (not A0 * B1) * (B0 + A1)
 
-Q<sub>1</sub> = .......
-
-C<sub>out</sub> = .......
+C<sub>out</sub> = A0 * B0 * A1 * B1
 
 </details>
 
@@ -143,7 +169,7 @@ Using your Boolean equations, build a logic network in [CircuitVerse](https://ci
 
 <details>
 <summary>Your solution</summary>
-A share link to your solution goes here: <a href=".................">Link!</a>
+A share link to your solution goes here: <a href="https://circuitverse.org/users/305606/projects/pp1-5905e2e9-c240-46dd-ba08-5044d9c194ec">Link!</a>
 </details>
 
 ---
